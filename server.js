@@ -11,7 +11,7 @@ app.use(express.json());
 
 // 🌟 PASTIKAN DUA BARIS INI ADA:
 app.use(express.static(__dirname));            // Untuk membaca index.html, dll
-app.use('/asset', express.static(path.join(__dirname, 'asset'))); // 🌟 TAMBAHKAN INI untuk folder asset
+app.use('/assets', express.static(path.join(__dirname, 'assets'))); // 🌟 TAMBAHKAN INI untuk folder asset
 
 function readTransactions() {
   return transactionsMemory;
