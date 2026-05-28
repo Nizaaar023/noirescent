@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🌟 PASTIKAN DUA BARIS INI ADA:
-app.use(express.static(__dirname));            // Untuk membaca index.html, dll
+// app.use(express.static(__dirname));            // Untuk membaca index.html, dll
 app.use('/assets', express.static(path.join(__dirname, 'assets'))); // 🌟 TAMBAHKAN INI untuk folder asset
 
 function readTransactions() {
