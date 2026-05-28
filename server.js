@@ -191,9 +191,7 @@ if (require.main === module) {
   });
 }
 
-// Tambahkan ini di bagian bawah server.js (sebelum module.exports)
-// Agar saat web utama diakses, langsung otomatis membaca index.html
-
+// Tambahkan ini di bagian bawah server.js sebelum module.exports
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
