@@ -9,11 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// 🌟 TAMBAHKAN BARIS INI: Agar Vercel bisa membaca file index.html, paymentgateway.html, dll.
-app.use(express.static(__dirname));
-
-// 🌟 UBAH BAGIAN INI: Menggunakan array di RAM untuk menghindari error "Read-only file system"
-let transactionsMemory = [];
+// 🌟 PASTIKAN DUA BARIS INI ADA:
+app.use(express.static(__dirname));            // Untuk membaca index.html, dll
+app.use('/asset', express.static(path.join(__dirname, 'asset'))); // 🌟 TAMBAHKAN INI untuk folder asset
 
 function readTransactions() {
   return transactionsMemory;
